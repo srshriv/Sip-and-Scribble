@@ -1,36 +1,30 @@
-# Sip & Scribble
+# Sip & Scribble ☕
 
-A personal journaling app built with MongoDB, Express, React, and Node.js.
+A personal journaling app where you can log entries, track your mood, and organize thoughts with tags. Built with the MERN stack.
 
-## Setup
+![MIT License](https://img.shields.io/badge/license-MIT-green) ![Node](https://img.shields.io/badge/node-20.x-brightgreen) ![React](https://img.shields.io/badge/react-18-blue)
 
-### Backend
+---
 
-```bash
-cd backend
-cp .env.example .env
-# Fill in your MONGO_URI and a strong JWT_SECRET
-npm install
-npm start
-```
+## Features
 
-### Frontend
+- JWT-based auth — signup, login, logout
+- Create, edit, and delete journal entries
+- Mood picker per entry (Calm, Happy, Sad, Motivated, Tired)
+- Comma-separated tags on each entry
+- Entries sorted newest-first and persisted in MongoDB
+- Auto-redirect to login when a token expires
+- Protected routes — unauthenticated users can't reach the dashboard
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+---
 
-For production, set `VITE_API_BASE_URL` in `frontend/.env` to point at your deployed backend.
+## Tech Stack
 
-## Environment Variables
+| Layer | Technology |
+|---|---|
+| Frontend | React 18, React Router v6, Axios, Vite |
+| Backend | Node.js, Express 4 |
+| Database | MongoDB Atlas, Mongoose |
+| Auth | JWT, bcryptjs |
 
-**Backend** (`backend/.env`):
-- `MONGO_URI` — MongoDB connection string
-- `JWT_SECRET` — any long random string
-- `PORT` — defaults to 5001
-- `CLIENT_ORIGIN` — comma-separated allowed origins for CORS
-
-**Frontend** (`frontend/.env`):
-- `VITE_API_BASE_URL` — backend URL (only needed in production; dev uses the Vite proxy)
+---
